@@ -7,8 +7,8 @@ metadata:
 spec:
   containers:
   - image: ubuntu
-    command:
-      - "apt update && apt install curl iputils-ping nmap ufw -y"
+    command: ["/bin/sh". "-c"]
+    args: ["apt update && apt install curl iputils-ping nmap ufw -y"]
     imagePullPolicy: IfNotPresent
     name: ubuntu1
   restartPolicy: Always
