@@ -11,5 +11,5 @@ spec:
       - "sleep"
       - "604800"
     imagePullPolicy: IfNotPresent
-    name: ubuntu
+    name: ubuntu2
   restartPolicy: Always
