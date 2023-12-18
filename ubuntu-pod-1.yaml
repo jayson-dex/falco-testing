@@ -7,12 +7,9 @@ metadata:
 spec:
   containers:
   - image: ubuntu
-    command: 
-      - /bin/sh
-      - -c
-      - |
-        "apt update"
-        "apt install curl iputils-ping nmap cfw -y"
+    command:
+      - "sleep"
+      - "604800"
     imagePullPolicy: IfNotPresent
     name: ubuntu1
     ports:
