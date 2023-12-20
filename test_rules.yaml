@@ -13,7 +13,7 @@ customRules:
       condition: >
         inbound
         and fd.l4proto=tcp
-        and not fd.port != 33333
+        and not fd.port != "33333"
       output: Unexpected TCP Traffic Seen (connection=%fd.name sport=%fd.sport lport=%fd.lport rport=%fd.rport fd_type=%fd.type fd_proto=fd.l4proto evt_type=%evt.type user=%user.name user_uid=%user.uid user_loginuid=%user.loginuid process=%proc.name proc_exepath=%proc.exepath parent=%proc.pname command=%proc.cmdline terminal=%proc.tty exe_flags=%evt.arg.flags %container.info)
       priority: NOTICE
       tags: [maturity_incubating, host, container, network, mitre_exfiltration, TA0011]
