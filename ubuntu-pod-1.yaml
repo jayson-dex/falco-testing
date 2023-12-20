@@ -6,7 +6,7 @@ metadata:
     app: ubuntu
 spec:
   containers:
-  - image: ubuntu
+  - image: busybox
     command:
       - "sleep"
       - "604800"
