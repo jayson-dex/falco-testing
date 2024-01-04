@@ -7,7 +7,7 @@ customRules:
         (fd.ip != "0.0.0.0" and fd.net != "127.0.0.0/8") and (evt.rawres >= 0 or evt.res = EINPROGRESS))
       
     - list: whitelist_ports
-      items: [33333]
+      items: [33333, 7777, 8805, 2123]
 
     - rule: Unexpected TCP Traffic
       desc: >
@@ -18,5 +18,5 @@ customRules:
         and fd.l4proto=tcp
         and fd.port in (whitelist_ports)
       output: Unexpected TCP Traffic Seen (connection=%fd.name sport=%fd.sport lport=%fd.lport fd_rip=%fd.rip fd_rip_name=%fd.rip.name rport=%fd.rport fd_type=%fd.type fd_proto=fd.l4proto evt_type=%evt.type user=%user.name user_uid=%user.uid user_loginuid=%user.loginuid process=%proc.name proc_exepath=%proc.exepath parent=%proc.pname command=%proc.cmdline terminal=%proc.tty exe_flags=%evt.arg.flags %container.info)
-      priority: NOTICE
+      priority: DEBUG
       tags: [maturity_incubating, host, container, network, mitre_exfiltration, TA0011]
